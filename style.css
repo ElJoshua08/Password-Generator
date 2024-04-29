@@ -4,6 +4,13 @@
   --light-background: #ffe5e5;
   --light-primary: #ac87c5;
   --light-secondary: #eea5a6;
+  --light-text-primary: #333;
+  --light-text-secondary: #1f1f1f;
+  --dark-background: linear-gradient(45deg, #1f1f20, #141318);
+  --dark-primary: #a6ffae;
+  --dark-secondary: #33323a;
+  --dark-text-primary: #eee;
+  --dark-text-secondary: #5f5d6b;
 }
 
 * {
@@ -14,14 +21,105 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
   background: var(--light-background);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: var(--light-text-secondary);
+}
+
+.container {
+  width: 90vw;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-radius: 0.2rem;
+  background-color: var(--light-secondary);
+}
+
+.password {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-left: 2rem;
+  font-weight: 700;
+  color: var(--light-text-primary);
+}
+
+#CopyButton {
+  margin-right: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--light-primary);
+}
+
+.container.generator {
+  flex-direction: column;
+}
+
+.length {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.length .passwordLength {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-left: 2rem;
+  color: var(--light-text-primary);
+  font-weight: 200;
+}
+
+.length .passwordLengthValue {
+  margin-right: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--light-primary);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #333;
+    background: var(--dark-background);
+  }
+
+  .title {
+    color: var(--dark-text-secondary);
+  }
+
+  .container {
+    background-color: var(--dark-secondary);
+  }
+
+  .password {
+    color: var(--dark-text-primary);
+  }
+
+  #CopyButton {
+    color: var(--dark-primary);
+  }
+
+  .length .passwordLength {
+    color: var(--dark-text-primary);
+  }
+
+  .length .passwordLengthValue {
+    color: var(--dark-primary);
   }
 }
