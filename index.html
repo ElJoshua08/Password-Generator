@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title">Password Generator</h1>
+
+  <main>
+    <section class="container">
+      <h2 class="password">Your Password</h2>
+      <ion-icon name="copy-outline"></ion-icon>
+    </section>
+    <section class="container">
+      <div class="length">
+        <h2 class="passwordLength">Password Length</h2>
+        <p class="passwordLengthValue">10</p>
+      </div>
+      <input id="passwordLengthInput" type="range" min="5" max="20">
+      <div class="options">
+        <div class="option"><input type="checkbox" name="Include Uppercase Letters" id="IncludeUppercase"><span>Include
+            Uppercase
+            Letters</span></div>
+        <div class="option"><input type="checkbox" name="Include Lowercase Letters" id="IncludeLowerse"><span>Include
+            Lowercase Letters</span></div>
+        <div class="option"><input type="checkbox" name="Include Numbers" id="IncludeNumbers"><span>Include
+            Numbers</span></div>
+        <div class="option"><input type="checkbox" name="Include Symbols" id="IncludeSymbols"><span>Include
+            Symbols</span></div>
+      </div>
+
+      <section class="inner-section">
+        <p>Strength</p>
+        <div class="strength">
+          <div class="strength-bar"></div>
+        </div>
+      </section>
+
+      <button id="generatePasswordBtn">
+        <p>Generate</p>
+        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+      </button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
