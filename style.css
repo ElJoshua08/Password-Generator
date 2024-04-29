@@ -102,6 +102,7 @@ body {
 }
 
 #generatePasswordButton {
+  position: relative;
   flex-grow: 1;
   margin: 0 2rem;
   display: flex;
@@ -114,17 +115,41 @@ body {
   border-radius: 0.3rem;
   cursor: pointer;
   font-size: 1.4rem;
+  color: var(--light-text-primary);
+  transition: all .4s ease-out;
 }
 
 #generatePasswordButton p {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+  z-index: 999;
 }
 
 #generatePasswordButton ion-icon {
   font-size: 2rem;
-  margin-left: 2rem;
+  margin-left: 4rem;
+}
+
+#generatePasswordButton::before {
+  content: "";
+  position: absolute;
+  background-color: #222;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  border-radius: 0.3rem;
+  transition: transform .6s ease-out;
+}
+
+#generatePasswordButton:hover {
+  color: var(--dark-text-primary);
+}
+
+#generatePasswordButton:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -158,5 +183,6 @@ body {
 
   #generatePasswordButton {
     background-color: var(--dark-primary);
+    color: var(--dark-secondary);
   }
 }
