@@ -9,6 +9,7 @@
   --dark-background: linear-gradient(45deg, #1f1f20, #141318);
   --dark-primary: #a6ffae;
   --dark-secondary: #33323a;
+  --dark-secondary-darker: #222127;
   --dark-text-primary: #eee;
   --dark-text-secondary: #5f5d6b;
 }
@@ -83,7 +84,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
 }
 
 .length .passwordLength {
@@ -101,7 +101,6 @@ body {
   color: var(--light-primary);
 }
 
-/*** TODO: El slider hay q hacerlos
 .lengthInput {
   width: 100%;
   display: flex;
@@ -114,15 +113,35 @@ body {
   appearance: none;
   width: 100%;
   height: 10px;
-  background: #111;
+  background: linear-gradient(to right, var(--light-primary) 50%, var(--light-secondary) 50%);
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  margin: 1rem 2rem;
-
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 2rem;
+  height: 4px;
+  border-radius: 1rem;
 }
-***/
+
+.lengthInput input::-webkit-slider-thumb {
+  appearance: none;
+  background-color: #fff;
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lengthInput input::-moz-range-thumb {
+  appearance: none;
+  background-color: #fff;
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
 .options {
   display: flex;
@@ -150,6 +169,7 @@ body {
   position: relative;
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 
 .option .wrapper input {
@@ -163,7 +183,6 @@ body {
   outline: 0;
   cursor: pointer;
   transition: all 0.25s ease;
-  position: relative; /* Añadido */
 }
 
 .option .wrapper label {
@@ -173,13 +192,17 @@ body {
   left: 0;
   font-size: 1.5rem;
   color: var(--light-primary);
+  cursor: pointer;
+}
+
+.option .wrapper label ion-icon {
+  --ionicon-stroke-width: 72px;
 }
 
 .option input:checked {
   background-color: var(--light-primary);
   border: 1.5px solid var(--light-primary);
 }
-
 
 .generatePassword {
   width: 100%;
@@ -188,7 +211,7 @@ body {
   justify-content: center;
 }
 
-#generatePasswordButton {
+#GeneratePasswordButton {
   position: relative;
   flex-grow: 1;
   margin: 0 2rem;
@@ -207,19 +230,19 @@ body {
   margin-bottom: 5px;
 }
 
-#generatePasswordButton p {
+#GeneratePasswordButton p {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
   z-index: 999;
 }
 
-#generatePasswordButton ion-icon {
+#GeneratePasswordButton ion-icon {
   font-size: 2rem;
   margin-left: 4rem;
 }
 
-#generatePasswordButton::before {
+#GeneratePasswordButton::before {
   content: '';
   position: absolute;
   background-color: #222;
@@ -231,11 +254,11 @@ body {
   transition: transform 300ms ease-out;
 }
 
-#generatePasswordButton:hover {
+#GeneratePasswordButton:hover {
   color: var(--dark-text-primary);
 }
 
-#generatePasswordButton:hover::before {
+#GeneratePasswordButton:hover::before {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -273,7 +296,7 @@ body {
     color: var(--dark-primary);
   }
 
-  #generatePasswordButton {
+  #GeneratePasswordButton {
     background-color: var(--dark-primary);
     color: var(--dark-secondary);
   }
@@ -288,6 +311,12 @@ body {
     border: 1.5px solid var(--dark-primary);
   }
 
-.option .wrapper label {
-color: var(--dark-secondary);
+  .option .wrapper label {
+    color: var(--dark-secondary);
+  }
+
+.lengthInput input {
+  background: linear-gradient(to right, var(--dark-primary) 50%, var(--dark-secondary-darker) 50%);
+
+}
 }
