@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Password Generator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -21,17 +21,38 @@
         <h2 class="passwordLength">Password Length</h2>
         <p class="passwordLengthValue">10</p>
       </div>
-      <input id="passwordLengthInput" type="range" min="5" max="20">
+      <div class="lengthInput">
+        <input id="passwordLengthInput" type="range" min="5" max="20" />
+      </div>
       <div class="options">
-        <div class="option"><input type="checkbox" name="Include Uppercase Letters" id="IncludeUppercase"><span>Include
-            Uppercase
-            Letters</span></div>
-        <div class="option"><input type="checkbox" name="Include Lowercase Letters" id="IncludeLowerse"><span>Include
-            Lowercase Letters</span></div>
-        <div class="option"><input type="checkbox" name="Include Numbers" id="IncludeNumbers"><span>Include
-            Numbers</span></div>
-        <div class="option"><input type="checkbox" name="Include Symbols" id="IncludeSymbols"><span>Include
-            Symbols</span></div>
+        <div class="option">
+          <div class="wrapper">
+            <input type="checkbox" name="Include Uppercase Letters" id="IncludeUppercase" />
+            <label for="IncludeUppercase"><ion-icon name="checkmark-outline"></ion-icon></label>
+          </div>
+          <span>Include Uppercase Letters </span>
+        </div>
+        <div class="option">
+          <div class="wrapper">
+            <input type="checkbox" name="Include Lowercase Letters" id="IncludeLowercase" checked />
+            <label for="IncludeLowercase"><ion-icon name="checkmark-outline"></ion-icon></label>
+          </div>
+          <span>Include Lowercase Letters</span>
+        </div>
+        <div class="option">
+          <div class="wrapper">
+            <input type="checkbox" name="Include Numbers" id="IncludeNumbers" checked />
+            <label for="IncludeNumbers"><ion-icon name="checkmark-outline"></ion-icon></label>
+          </div>
+          <span>Include Numbers</span>
+        </div>
+        <div class="option">
+          <div class="wrapper">
+            <input type="checkbox" name="Include Symbols" id="IncludeSymbols" />
+            <label for="IncludeSymbols"><ion-icon name="checkmark-outline"></ion-icon></label>
+          </div>
+          <span>Include Symbols</span>
+        </div>
       </div>
 
       <!-- <section class="inner-section">
