@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/* Variables de color */
 :root {
-  --light-background: #ffe5e5;
-  --light-primary: #ac87c5;
-  --light-secondary: #eea5a6;
-  --light-text-primary: #333;
-  --light-text-secondary: #1f1f1f;
-  --dark-background: linear-gradient(45deg, #1f1f20, #141318);
-  --dark-primary: #a6ffae;
-  --dark-secondary: #33323a;
-  --dark-secondary-darker: #222127;
-  --dark-text-primary: #eee;
-  --dark-text-secondary: #5f5d6b;
+  --background: linear-gradient(135deg, #f5f5f5, #bbdefb);
+  --primary: #236ec5;
+  --secondary: #aec9d7;
+  --secondary-darker: #78909c;
+  --text-primary: #646262;
+  --text-secondary: #c7bdbd;
+  --text-lighter: #dbd8d8;
 }
 
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -25,8 +23,9 @@ html {
   font-family: 'Nunito', sans-serif;
 }
 
+/* Estilos del cuerpo */
 body {
-  background: var(--light-background);
+  background: var(--background);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -36,13 +35,15 @@ body {
   flex-direction: column;
 }
 
+/* Estilos del título */
 .title {
   font-size: 1.6rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: var(--light-text-secondary);
+  color: var(--text-secondary);
 }
 
+/* Estilos del contenedor */
 .container {
   width: 90vw;
   max-width: 450px;
@@ -52,22 +53,24 @@ body {
   margin-top: 2rem;
   padding: 1.5rem 0;
   border-radius: 0.2rem;
-  background-color: var(--light-secondary);
+  background-color: var(--secondary);
 }
 
+/* Estilos de la contraseña */
 .password {
   font-size: 2.5rem;
   letter-spacing: 1px;
   margin-left: 2rem;
   font-weight: 700;
-  color: var(--light-text-primary);
+  color: var(--text-primary);
 }
 
+/* Estilos del botón de copiar */
 #CopyButton {
   margin-right: 2rem;
   font-size: 2rem;
   cursor: pointer;
-  color: var(--light-primary);
+  color: var(--primary);
   transition: all 0.3s ease;
 }
 
@@ -75,6 +78,7 @@ body {
   color: #eee;
 }
 
+/* Estilos específicos para el generador de contraseñas */
 .container.generator {
   flex-direction: column;
 }
@@ -90,7 +94,7 @@ body {
   font-size: 1.4rem;
   letter-spacing: 1px;
   margin-left: 2rem;
-  color: var(--light-text-primary);
+  color: var(--text-primary);
   font-weight: 200;
 }
 
@@ -98,33 +102,39 @@ body {
   margin-right: 2rem;
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--light-primary);
+  color: var(--primary);
 }
 
 .lengthInput {
-  width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-self: center;
+  margin: 2rem 0;
+  width: 100%;
 }
 
 .lengthInput input {
   -webkit-appearance: none;
+  height: 4px;
   appearance: none;
   width: 100%;
-  height: 10px;
-  background: linear-gradient(to right, var(--light-primary) 50%, var(--light-secondary) 50%);
+  background: linear-gradient(
+    to right,
+    var(--primary) 50%,
+    var(--secondary-darker) 50%
+  );
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-  margin: 2rem;
-  height: 4px;
-  border-radius: 1rem;
+  margin: 0 2rem;
+  border-radius: 100rem;
 }
+
 
 .lengthInput input::-webkit-slider-thumb {
   appearance: none;
+  -webkit-appearance: none;
   background-color: #fff;
   width: 15px;
   aspect-ratio: 1 / 1;
@@ -133,16 +143,7 @@ body {
   transition: all 0.2s ease;
 }
 
-.lengthInput input::-moz-range-thumb {
-  appearance: none;
-  background-color: #fff;
-  width: 15px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
+/* Estilos para las opciones */
 .options {
   display: flex;
   flex-direction: column;
@@ -162,7 +163,7 @@ body {
 .option span {
   margin-left: 2rem;
   font-size: 1.4rem;
-  color: var(--light-text-primary);
+  color: var(--text-primary);
 }
 
 .option .wrapper {
@@ -191,19 +192,17 @@ body {
   top: 0;
   left: 0;
   font-size: 1.5rem;
-  color: var(--light-primary);
+  color: var(--secondary);
+  --ionicon-stroke-width: 72px;
   cursor: pointer;
 }
 
-.option .wrapper label ion-icon {
-  --ionicon-stroke-width: 72px;
-}
-
 .option input:checked {
-  background-color: var(--light-primary);
-  border: 1.5px solid var(--light-primary);
+  background-color: var(--primary);
+  border: 1.5px solid var(--primary);
 }
 
+/* Estilos del botón de generar contraseña */
 .generatePassword {
   width: 100%;
   display: flex;
@@ -219,13 +218,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 40px;
-  background-color: var(--light-primary);
+  background-color: var(--primary);
   outline: 0;
   border: 0;
   border-radius: 0.3rem;
   cursor: pointer;
   font-size: 1.4rem;
-  color: var(--light-text-primary);
+  color: var(--text-secondary);
   transition: all 250ms ease-out;
   margin-bottom: 5px;
 }
@@ -245,7 +244,7 @@ body {
 #GeneratePasswordButton::before {
   content: '';
   position: absolute;
-  background-color: #222;
+  background-color: var(--secondary-darker);
   width: 100%;
   height: 100%;
   transform: scaleX(0);
@@ -255,7 +254,7 @@ body {
 }
 
 #GeneratePasswordButton:hover {
-  color: var(--dark-text-primary);
+  color: var(--text-lighter);
 }
 
 #GeneratePasswordButton:hover::before {
@@ -263,60 +262,14 @@ body {
   transform-origin: left;
 }
 
+/* Estilos oscuros */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: var(--dark-background);
+  :root {
+    --background: linear-gradient(45deg, #1f1f20, #141318);
+    --primary: #a6ffae;
+    --secondary: #33323a;
+    --secondary-darker: #222127;
+    --text-primary: #eee;
+    --text-secondary: #5f5d6b;
   }
-
-  .title {
-    color: var(--dark-text-secondary);
-  }
-
-  .container {
-    background-color: var(--dark-secondary);
-  }
-
-  .password {
-    color: var(--dark-text-primary);
-  }
-
-  #CopyButton {
-    color: var(--dark-primary);
-  }
-
-  #CopyButton:hover {
-    color: #111;
-  }
-
-  .length .passwordLength {
-    color: var(--dark-text-primary);
-  }
-
-  .length .passwordLengthValue {
-    color: var(--dark-primary);
-  }
-
-  #GeneratePasswordButton {
-    background-color: var(--dark-primary);
-    color: var(--dark-secondary);
-  }
-
-  .option span {
-    color: var(--dark-text-primary);
-    opacity: 0.8;
-  }
-
-  .option input:checked {
-    background-color: var(--dark-primary);
-    border: 1.5px solid var(--dark-primary);
-  }
-
-  .option .wrapper label {
-    color: var(--dark-secondary);
-  }
-
-.lengthInput input {
-  background: linear-gradient(to right, var(--dark-primary) 50%, var(--dark-secondary-darker) 50%);
-
-}
 }
