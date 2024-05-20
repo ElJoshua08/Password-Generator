@@ -31,6 +31,15 @@ function generatePassword(length, uppercase, lowercase, numbers, symbols) {
 
 // Función para inicializar la página
 function initializePage() {
+  // Inicializar el favicon, dependiendo de si el usuario prefiere el
+  // modo oscuro o no
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) { 
+    document.querySelector('link[rel="icon"]').href = "./icon/favicon.dark.svg"
+  } else {
+    document.querySelector('link[rel="icon"]').href = "./icon/favicon.light.svg"
+  }
+
+
   // Inicializar el valor del rango de longitud de la contraseña
   let $passwordLength = document.getElementById('PasswordLengthInput');
   let $passwordLengthValue = document.querySelector('.passwordLengthValue');
@@ -68,6 +77,7 @@ function initializePage() {
 function copyPassword() {
   let $password = document.querySelector('.password');
   navigator.clipboard.writeText($password.innerText);
+  alert("Password Copied!")
 }
 
 // Escuchar eventos
